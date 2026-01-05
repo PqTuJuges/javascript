@@ -1,9 +1,10 @@
-function jouerAuNombreMystere() {
-    const nombreMystere = Math.floor(Math.random() * 20) + 1;
+function jouerAuNombreMystere(nombreMin,nombreMax) {
+    const nombreMystere = Math.floor(Math.random() * (nombreMax - nombreMin ) + nombreMin);
+    console.log(nombreMystere)
     let compteur = 0;
     let nombre = null;
     while (true) {
-        nombre = prompt("Trouvez le nombre mystère : ");
+        nombre = prompt("Trouvez le nombre mystère entre le nombre ", nombreMin , " et le nombre max" , nombreMax , " : ");
         compteur++;
         if (nombre > nombreMystere) {
             console.log("Le nombre mystère est plus petit!");
@@ -17,4 +18,5 @@ function jouerAuNombreMystere() {
 }
 
 // Appeler la fonction permettant de lancer la partie.
-jouerAuNombreMystere();
+
+jouerAuNombreMystere(10,30);
