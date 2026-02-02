@@ -8,4 +8,16 @@ export const execExo02 = () => {
         console.log("élément manque");
         return;
     }
+    const texteVide = "(vide)";
+    let sortieEstVisible = false;
+    boutonToggleElem.addEventListener('click', () =>{
+        sortieEstVisible = !sortieEstVisible;
+        if(sortieEstVisible){
+            sortieElem.textContent = texteElem.innerText;
+            boutonToggleElem.textContent = "Effacer le résumé";
+        }else{
+            sortieElem.textContent = texteVide;
+            boutonToggleElem.textContent = "Générer le résumé visible";
+        }
+    })
 }
