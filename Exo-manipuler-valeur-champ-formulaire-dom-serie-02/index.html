@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS: Manipuler la valeur d'un champ de formulaire - Série 02</title>
+</head>
+<body>
+    <h1>JS: Manipuler la valeur d'un champ de formulaire - Série 02</h1>
+
+    <!-- Exo 07 -->
+    <section>
+        <h2>07. input text en temps réel, nettoyage et affichage</h2>
+
+        <p>
+            Scénario : saisir un nom dans un champ et afficher en direct la version nettoyée.
+        </p>
+
+        <label for="exo07-nom">Nom :</label>
+        <input type="text" id="exo07-nom" placeholder="Ex.:   Martin   ">
+
+        <p id="exo07-sortie" class="zone-sortie">Nom affiché : (vide)</p>
+    </section>
+
+    <!-- Exo 08 -->
+    <section>
+        <h2>08. input text, value et defaultValue</h2>
+
+        <p>
+            Scénario : comparer la valeur courante (JavaScript) et la valeur par défaut (HTML) d'un champ.
+        </p>
+
+        <label for="exo08-prenom">Prénom :</label>
+        <input type="text" id="exo08-prenom" value="Alice">
+
+        <div class="zone-actions">
+            <button id="exo08-btn-afficher">Afficher value et defaultValue</button>
+            <button id="exo08-btn-reset">Réinitialiser l'affichage</button>
+        </div>
+
+        <p id="exo08-value" class="zone-sortie">value : (vide)</p>
+        <p id="exo08-defaultvalue" class="zone-sortie">defaultValue : (vide)</p>
+    </section>
+
+    <!-- Exo 09 -->
+    <section>
+        <h2>09. textarea, value et defaultValue</h2>
+
+        <p>
+            Scénario : reproduire la comparaison value vs defaultValue sur un textarea.
+        </p>
+
+        <label for="exo09-message">Message :</label>
+        <textarea id="exo09-message" rows="4">Message initial écrit dans le HTML.</textarea>
+
+        <div class="zone-actions">
+            <button id="exo09-btn-afficher">Afficher value et defaultValue</button>
+            <button id="exo09-btn-reset">Réinitialiser l'affichage</button>
+        </div>
+
+        <p id="exo09-value" class="zone-sortie">value : (vide)</p>
+        <p id="exo09-defaultvalue" class="zone-sortie">defaultValue : (vide)</p>
+    </section>
+
+    <!-- Exo 10 -->
+    <section>
+        <h2>10. select, valeur sélectionnée et valeur inexistante</h2>
+
+        <p>
+            Scénario : afficher la valeur sélectionnée et tester l'affectation d'une valeur qui n'existe pas.
+        </p>
+
+        <label for="exo10-pays">Pays :</label>
+        <select id="exo10-pays">
+            <option value="be">Belgique</option>
+            <option value="fr">France</option>
+            <option value="nl">Pays-Bas</option>
+        </select>
+
+        <div class="zone-actions">
+            <button id="exo10-btn-inexistant">Forcer une valeur inexistante</button>
+            <button id="exo10-btn-reset">Réinitialiser</button>
+        </div>
+
+        <p id="exo10-sortie" class="zone-sortie">Sélection : (vide)</p>
+    </section>
+
+    <!-- Exo 11 -->
+    <section>
+        <h2>11. checkbox, checked et defaultChecked</h2>
+
+        <p>
+            Scénario : activer ou désactiver une préférence, puis comparer l'état courant et l'état par défaut.
+        </p>
+
+        <label class="ligne">
+            <input type="checkbox" id="exo11-newsletter">
+            Recevoir la newsletter
+        </label>
+
+        <div class="zone-actions">
+            <button id="exo11-btn-console">Afficher checked et defaultChecked (console)</button>
+            <button id="exo11-btn-reset">Réinitialiser le message</button>
+        </div>
+
+        <p id="exo11-sortie" class="zone-sortie">Préférence : (non définie)</p>
+    </section>
+
+    <!-- Exo 12 -->
+    <section>
+        <h2>12. radios, valeur sélectionnée et sélection forcée</h2>
+
+        <p>
+            Scénario : choisir un niveau, afficher la valeur en direct, puis forcer une sélection via JavaScript.
+        </p>
+
+        <div class="groupe">
+            <label class="ligne">
+                <input type="radio" name="exo12-niveau" value="debutant">
+                Débutant
+            </label>
+
+            <label class="ligne">
+                <input type="radio" name="exo12-niveau" value="intermediaire">
+                Intermédiaire
+            </label>
+
+            <label class="ligne">
+                <input type="radio" name="exo12-niveau" value="avance">
+                Avancé
+            </label>
+        </div>
+
+        <div class="zone-actions">
+            <button id="exo12-btn-existant">Forcer la valeur "intermediaire"</button>
+            <button id="exo12-btn-inexistant">Tenter de forcer une valeur inexistante</button>
+            <button id="exo12-btn-reset">Réinitialiser</button>
+        </div>
+
+        <p id="exo12-sortie" class="zone-sortie">Niveau sélectionné : (aucun)</p>
+    </section>
+
+    <!-- Exo 13 -->
+    <section>
+        <h2>13. input number, lecture via value et traitement des cas vides</h2>
+
+        <p>
+            Scénario : saisir une quantité, afficher la valeur, puis gérer proprement le cas où rien n'est saisi.
+        </p>
+
+        <label for="exo13-quantite">Quantité (required) :</label>
+        <input type="number" id="exo13-quantite" required placeholder="Ex.: 3">
+
+        <p id="exo13-sortie" class="zone-sortie">Quantité affichée : (vide)</p>
+    </section>
+
+    <!-- Exo 14 -->
+    <section>
+        <h2>14. input number, lecture via valueAsNumber</h2>
+
+        <p>
+            Scénario : refaire l'exo précédent avec <span class="commande" role="text">valueAsNumber</span> pour simplifier le traitement.
+        </p>
+
+        <label for="exo14-quantite">Quantité (required) :</label>
+        <input type="number" id="exo14-quantite" required placeholder="Ex.: 3">
+
+        <p id="exo14-sortie" class="zone-sortie">Quantité affichée : (vide)</p>
+    </section>
+
+    <!-- Exo 15 -->
+    <section>
+        <h2>15. input date, planifier une échéance</h2>
+
+        <p>
+            Scénario : choisir une date d'échéance, afficher un résumé utile pour un écran "planning".
+        </p>
+
+        <label for="exo15-echeance">Échéance :</label>
+        <input type="date" id="exo15-echeance">
+
+        <div class="zone-actions">
+            <button id="exo15-btn-aujourdhui">Définir aujourd'hui</button>
+            <button id="exo15-btn-reset">Réinitialiser</button>
+        </div>
+
+        <p id="exo15-sortie" class="zone-sortie">Échéance : (aucune)</p>
+    </section>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>
