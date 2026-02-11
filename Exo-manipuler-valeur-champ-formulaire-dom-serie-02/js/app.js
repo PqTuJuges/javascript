@@ -1,2 +1,10 @@
 import { execExo07 } from "./modules/exo07.js";
+import { execExo08 } from "./modules/exo08.js";
+import { execExo09 } from "./modules/exo09.js";
+import { execExo10 } from "./modules/exo10.js";
+import { execExo11 } from "./modules/exo11.js";
 execExo07();
+execExo08();
+execExo09();
+execExo10();
+execExo11();
