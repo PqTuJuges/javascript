@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS: Manipulation Attributs data - Exo 01</title>
+</head>
+<body>
+    <main>
+        <h1>JS: Manipulation Attributs data - Exo 01</h1>
+        <h2>Catalogue de jeux</h2>
+
+        <section class="filtres">
+            <h3>Filtre</h3>
+
+            <label>
+                Catégorie
+                <select id="select-categorie">
+                    <option value="toutes" selected>Toutes</option>
+                    <option value="fps">FPS</option>
+                    <option value="rogue-lite">Rogue-lite</option>
+                </select>
+            </label>
+        </section>
+
+        <section id="catalogue" class="catalogue">
+            <article class="jeu js-jeu" data-categorie="fps">
+                <h3>DOOM Eternal</h3>
+                <p class="meta">FPS</p>
+            </article>
+
+            <article class="jeu js-jeu" data-categorie="fps">
+                <h3>Valorant</h3>
+                <p class="meta">FPS</p>
+            </article>
+
+            <article class="jeu js-jeu" data-categorie="rogue-lite">
+                <h3>Hades</h3>
+                <p class="meta">Rogue-lite</p>
+            </article>
+
+            <article class="jeu js-jeu" data-categorie="rogue-lite">
+                <h3>Dead Cells</h3>
+                <p class="meta">Rogue-lite</p>
+            </article>
+
+            <article class="jeu js-jeu" data-categorie="rogue-lite">
+                <h3>Vampire Survivors</h3>
+                <p class="meta">Rogue-lite</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>

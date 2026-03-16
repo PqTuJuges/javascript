@@ -1,0 +1,176 @@
+/* VARIABLES */
+:root
+{
+    --fond-principal: #0e1319;
+    --fond-secondaire: #151c24;
+    --texte-principal: #e7e1ca;
+    --texte-secondaire: #b9b39f;
+    --accent-visuel: orange;
+
+    --espace-s: 0.75rem;
+    --espace-m: 2rem;
+
+    --police-corps: Arial, sans-serif;
+
+    --rayon-s: 0.5rem;
+    --bordure: 1px solid rgba(231, 225, 202, 0.15);
+}
+
+/* RESET */
+html, body, main, section, article, h1, h2, h3, p, label, select
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+html
+{
+    font-family: var(--police-corps);
+    color: var(--texte-principal);
+    background-color: var(--fond-principal);
+}
+
+body
+{
+    min-height: 100vh;
+}
+
+main
+{
+    margin: 0 auto;
+    padding: var(--espace-m);
+    width: min(900px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-m);
+}
+
+h1, h2
+{
+    text-align: center;
+}
+
+/* FILTRES */
+.filtres
+{
+    border: var(--bordure);
+    border-radius: var(--rayon-s);
+    padding: var(--espace-m);
+    background: var(--fond-secondaire);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-m);
+    align-items: end;
+}
+
+.filtres h3
+{
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--texte-secondaire);
+}
+
+label
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+select
+{
+    border: var(--bordure);
+    border-radius: var(--rayon-s);
+    padding: 0.6rem 0.8rem;
+    outline: none;
+    color: var(--texte-principal);
+    background: transparent;
+}
+
+select option
+{
+    background: var(--fond-principal);
+    color: var(--texte-principal);
+}
+
+select:focus
+{
+    border-color: var(--accent-visuel);
+    background: var(--fond-principal);
+}
+
+/* CATALOGUE */
+.catalogue
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espace-m);
+}
+
+.jeu
+{
+    border: var(--bordure);
+    border-radius: var(--rayon-s);
+    padding: var(--espace-m);
+    background: var(--fond-secondaire);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-s);
+}
+
+/*
+    Note sur hidden
+
+    Le navigateur applique bien display: none quand l'attribut hidden est present.
+    Cependant, une regle CSS comme .serie { display: flex; } vient d'un style auteur
+    et peut l'emporter sur le style par defaut du navigateur.
+
+    Cette regle garantit que hidden cache vraiment les cartes dans ce projet.
+*/
+.jeu[hidden]
+{
+    display: none;
+}
+
+.jeu::before
+{
+    content: "";
+    width: 2.5rem;
+    height: 0.25rem;
+    background: var(--accent-visuel);
+    border-radius: 999px;
+}
+
+.jeu h2
+{
+    font-size: 1.05rem;
+}
+
+.meta
+{
+    color: var(--texte-secondaire);
+    font-size: 0.95rem;
+}
+
+.desc
+{
+    color: var(--texte-secondaire);
+    line-height: 1.45;
+}
+
+/* RESPONSIVE */
+@media (max-width: 520px)
+{
+    main
+    {
+        padding: 1rem;
+    }
+
+    .filtres
+    {
+        padding: 1rem;
+    }
+}
