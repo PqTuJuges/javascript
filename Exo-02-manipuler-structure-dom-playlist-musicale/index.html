@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS: Manipuler la structure du DOM - Exo 02</title>
+</head>
+<body>
+    <main>
+        <h1>Ma Playlist Musicale</h1>
+
+        <div class="conteneur-principal">
+            <section class="section-catalogue">
+                <h2>Catalogue</h2>
+                <div id="catalogue" class="catalogue">
+                    <!-- Les chansons du catalogue seront générées en JavaScript -->
+                </div>
+            </section>
+
+            <section class="section-playlist">
+                <h2>Ma Playlist</h2>
+                <div class="stats">
+                    <span id="nb-chansons">0 chanson</span>
+                    <span class="separateur">•</span>
+                    <span id="duree-totale">0:00</span>
+                </div>
+                <div id="liste-playlist" class="liste-playlist">
+                    <!-- Les chansons ajoutées apparaîtront ici -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>

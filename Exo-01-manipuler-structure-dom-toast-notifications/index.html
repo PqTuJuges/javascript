@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS: Manipuler la structure du DOM - Exo 01</title>
+</head>
+<body>
+    <main>
+        <h1>Système de notifications</h1>
+
+
+        <div id="boutons-conteneur" class="boutons-conteneur">
+            <button id="btn-succes" class="btn btn-succes" data-type="succes">
+                <span aria-hidden="true">✓</span> Notification Succès
+            </button>
+            <button id="btn-erreur" class="btn btn-erreur" data-type="erreur">
+                <span aria-hidden="true">✗</span> Notification Erreur
+            </button>
+            <button id="btn-info" class="btn btn-info" data-type="info">
+                <span aria-hidden="true">ℹ</span> Notification Info
+            </button>
+        </div>
+    </main>
+
+    <div id="toasts-conteneur" class="toasts-conteneur">
+        <!-- Les notifications seront insérées ici dynamiquement -->
+    </div>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>
