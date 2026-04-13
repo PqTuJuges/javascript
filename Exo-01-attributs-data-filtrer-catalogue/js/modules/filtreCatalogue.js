@@ -14,5 +14,12 @@ export const initialiserFiltreCatalogue = (selecteurCssCategorie, selecteurCssCa
 
 const appliquerFiltre = () => {
     const categorieDemandee = selectCategorieElem.value;
-    //finir la fin de l'exerccie étape 4
+    console.log("Catégorie demandée :", categorieDemandee);
+
+    for (const carteElement of carteElements) {
+        const categorieCarte = carteElement.dataset.categorie;
+        const estVisible = ( categorieDemandee === 'toutes' || categorieCarte === categorieDemandee);
+        carteElement.hidden = !estVisible;
+        
+    }
 }
