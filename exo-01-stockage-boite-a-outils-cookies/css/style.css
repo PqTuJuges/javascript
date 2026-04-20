@@ -1,0 +1,158 @@
+/* VARIABLES */
+:root
+{
+    --fond-principal: #0e1319;
+    --fond-secondaire: #151c24;
+    --texte-principal: #e7e1ca;
+    --texte-secondaire: #b9b39f;
+    --accent-visuel: orange;
+
+    --espace-s: 0.75rem;
+    --espace-m: 1.5rem;
+
+    --police-corps: Arial, sans-serif;
+
+    --rayon-s: 0.5rem;
+    --bordure: 1px solid rgba(231, 225, 202, 0.15);
+}
+
+/* RESET */
+html, body, main, section, h1, h2, p, pre, label, input, button
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+html
+{
+    font-family: var(--police-corps);
+    color: var(--texte-principal);
+    background-color: var(--fond-principal);
+}
+
+body
+{
+    min-height: 100vh;
+}
+
+main
+{
+    margin: 0 auto;
+    padding: var(--espace-m);
+    width: min(700px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-m);
+}
+
+h1
+{
+    text-align: center;
+}
+
+/* PANNEAUX */
+.panneau
+{
+    border: var(--bordure);
+    border-radius: var(--rayon-s);
+    padding: var(--espace-m);
+    background: var(--fond-secondaire);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-s);
+}
+
+.panneau h2
+{
+    font-size: 1.1rem;
+    color: var(--texte-secondaire);
+}
+
+label
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+}
+
+input
+{
+    border: var(--bordure);
+    border-radius: var(--rayon-s);
+    padding: 0.6rem 0.8rem;
+    outline: none;
+    color: var(--texte-principal);
+    background: transparent;
+    font-size: 1rem;
+}
+
+input:focus
+{
+    border-color: var(--accent-visuel);
+}
+
+/* BOUTONS */
+.btn
+{
+    border: none;
+    border-radius: var(--rayon-s);
+    padding: 0.65rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--fond-principal);
+    background-color: var(--accent-visuel);
+    align-self: flex-start;
+    transition: opacity 0.2s;
+}
+
+.btn:hover
+{
+    opacity: 0.9;
+}
+
+.btn:active
+{
+    opacity: 0.8;
+}
+
+/* RÉSULTAT */
+.resultat
+{
+    color: var(--accent-visuel);
+    font-weight: bold;
+    min-height: 1.4em;
+}
+
+/* ÉTAT BRUT */
+.panneau-etat
+{
+    border-color: var(--accent-visuel);
+}
+
+.etat-brut
+{
+    color: var(--texte-secondaire);
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 520px)
+{
+    main
+    {
+        padding: 1rem;
+    }
+
+    .panneau
+    {
+        padding: 1rem;
+    }
+}

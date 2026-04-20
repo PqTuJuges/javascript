@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS: Stockage des données — Exo 01</title>
+</head>
+<body>
+    <main>
+        <h1>Boîte à outils cookies</h1>
+
+        <section class="panneau">
+            <h2>Écrire un cookie</h2>
+            <label>
+                Nom
+                <input type="text" id="ecrire-nom" placeholder="theme">
+            </label>
+            <label>
+                Valeur
+                <input type="text" id="ecrire-valeur" placeholder="sombre">
+            </label>
+            <label>
+                Durée (jours)
+                <input type="number" id="ecrire-jours" value="7" min="1">
+            </label>
+            <button id="btn-ecrire" class="btn">Écrire</button>
+        </section>
+
+        <section class="panneau">
+            <h2>Lire un cookie</h2>
+            <label>
+                Nom
+                <input type="text" id="lire-nom" placeholder="theme">
+            </label>
+            <button id="btn-lire" class="btn">Lire</button>
+            <p id="lire-resultat" class="resultat"></p>
+        </section>
+
+        <section class="panneau">
+            <h2>Supprimer un cookie</h2>
+            <label>
+                Nom
+                <input type="text" id="supprimer-nom" placeholder="theme">
+            </label>
+            <button id="btn-supprimer" class="btn">Supprimer</button>
+        </section>
+
+        <section class="panneau panneau-etat">
+            <h2>État brut de document.cookie</h2>
+            <pre id="etat-cookies" class="etat-brut">(vide)</pre>
+        </section>
+    </main>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>

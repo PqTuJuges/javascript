@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS: Stockage des données — Exo 02</title>
+</head>
+<body>
+    <main>
+        <h1>Bannière de consentement</h1>
+
+        <section class="contenu">
+            <h2>Bienvenue sur le site</h2>
+            <p>
+                Cette page simule un site qui utilise une bannière de consentement cookies.
+                La bannière apparaît en bas de l'écran lors de la première visite.
+                Si le consentement est donné, elle ne réapparaît plus pendant 30 jours.
+            </p>
+            <button id="btn-reinitialiser" class="btn btn-reinitialiser">Réinitialiser le consentement</button>
+        </section>
+    </main>
+
+    <aside id="banniere" class="banniere" hidden tabindex="-1" aria-label="Bannière de consentement">
+        <p class="banniere-texte">
+            Ce site utilise des cookies pour améliorer votre expérience.
+            En continuant, vous acceptez leur utilisation.
+        </p>
+        <div class="banniere-actions">
+            <button id="btn-accepter" class="btn btn-accepter">Accepter</button>
+        </div>
+    </aside>
+
+    <p id="annonce-a11y" class="sr-only" aria-live="polite"></p>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>
