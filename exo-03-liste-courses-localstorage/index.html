@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Liste de courses (localStorage)</title>
+</head>
+<body>
+    <header class="site-header">
+        <h1>🛒 Liste de courses</h1>
+        <p class="intro">
+            Ajoute des produits, puis recharge la page : ta liste doit rester.
+        </p>
+    </header>
+
+    <main class="container">
+        <section class="card" aria-labelledby="titre-formulaire">
+            <h2 id="titre-formulaire">Ajouter un produit</h2>
+
+            <form id="form-ajout">
+                <div class="field">
+                    <label for="produit">Nom du produit</label>
+                    <input id="produit" name="produit" type="text" autocomplete="off" required>
+                    <p class="help" id="help-produit">Exemples : Pain, Lait, Pâtes…</p>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-ajouter" type="submit">Ajouter</button>
+                    <button id="btn-effacer" type="button">Tout effacer</button>
+                </div>
+            </form>
+
+            <!-- Zone de retours utilisateur (déjà accessible en HTML ; la mise à jour se fera en JS à la fin) -->
+            <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="card" aria-labelledby="titre-liste">
+            <div class="liste-header">
+                <h2 id="titre-liste">Ma liste</h2>
+                <p class="compteur">
+                    <span id="nb-items">0</span> élément(s)
+                </p>
+            </div>
+
+            <p id="etat-vide" class="empty">Ta liste est vide. Ajoute ton premier produit 👆</p>
+
+            <ul id="liste" class="liste"></ul>
+        </section>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
